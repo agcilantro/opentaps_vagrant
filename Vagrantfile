@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "bootstrap.sh"
   
    # Set default package name when exporting
-  config.package.name = "vagrant-JAVAJDK"
+  config.package.name = "vagrant-opentaps"
 
 
   # Disable automatic box update checking. If you disable this, then
@@ -62,9 +62,9 @@ Vagrant.configure(2) do |config|
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at
   # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-   config.push.define "atlas" do |push|
-     push.app = "agcilantro/vagrantrypush"
-   end
+  # config.push.define "SERVICE" do |push|
+   #  push.app = "example/EXAMPLE"
+   # end
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
