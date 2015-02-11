@@ -27,10 +27,28 @@ apt-get update
 echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 apt-get install -y oracle-java7-installer
 
-cd /vagrant
+
 git config --global user.name "agcilantro"
 git config --global user.email agcilantro@gmail.com
-git clone --recursive https://gitorious.org/opentaps/opentaps.git
+git clone --recursive https://gitorious.org/opentaps/opentaps.git opentaps
+
+# change ownership of opentaps folder to vagrant:opentaps, chmod opentaps folder to 700
+sudo addgroup opentaps
+sudo adduser vagrant opentaps
+sudo chown -R vagrant:opentaps opentaps
+sudo chmod 700 opentaps
+
+cd opentaps
+
+
+
+# ./ant
+# ./ant load-demo
+# ./ant load-extseed
+# ./ant start
+./startofbiz.sh
+
+
 
 
 
