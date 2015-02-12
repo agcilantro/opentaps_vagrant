@@ -30,7 +30,8 @@ apt-get install -y oracle-java7-installer
 
 git config --global user.name "agcilantro"
 git config --global user.email agcilantro@gmail.com
-git clone --recursive https://gitorious.org/opentaps/opentaps.git opentaps
+#wget http://downloads.sourceforge.net/project/opentaps/opentaps%201.5/opentaps-1.5.0.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fopentaps%2Ffiles%2Fopentaps%25201.4%2F&ts=1423709025&use_mirror=colocrossing opentaps
+# git clone --recursive https://gitorious.org/opentaps/opentaps.git opentaps
 
 # change ownership of opentaps folder to vagrant:opentaps, chmod opentaps folder to 700
 sudo addgroup opentaps
