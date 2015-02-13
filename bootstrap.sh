@@ -3,12 +3,12 @@
 apt-get update
 
 apt-get install -y git
-apt-get install -y php5
-apt-get install -y apache2
+# apt-get install -y php5
+# apt-get install -y apache2
 
-if ! [ -L /var/www ]; then
-	rm -rf /var/www
-	ln -fs /vagrant /var/www
+# if ! [ -L /var/www ]; then
+#	rm -rf /var/www
+#	ln -fs /vagrant /var/www
 
 
 # installs webupd8team repository to install java jdk
@@ -28,26 +28,26 @@ echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | su
 apt-get install -y oracle-java7-installer
 
 
-git config --global user.name "agcilantro"
-git config --global user.email agcilantro@gmail.com
+# git config --global user.name "agcilantro"
+# git config --global user.email agcilantro@gmail.com
 #wget http://downloads.sourceforge.net/project/opentaps/opentaps%201.5/opentaps-1.5.0.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fopentaps%2Ffiles%2Fopentaps%25201.4%2F&ts=1423709025&use_mirror=colocrossing opentaps
-# git clone --recursive https://gitorious.org/opentaps/opentaps.git opentaps
+ git clone --recursive https://gitorious.org/opentaps/agcilantros-integratingweb-opentaps.git opentaps
 
 # change ownership of opentaps folder to vagrant:opentaps, chmod opentaps folder to 700
 sudo addgroup opentaps
 sudo adduser vagrant opentaps
-sudo chown -R vagrant:opentaps opentaps
-sudo chmod 700 opentaps
+sudo chown -R vagrant:opentaps /vagrant/opentaps
+sudo chmod 700 /vagrant/opentaps
 
-cd opentaps
+# cd /vagrant/opentaps
 
 
 
 # ./ant
-# ./ant load-demo
+# ./ant run-install
 # ./ant load-extseed
 # ./ant start
-./startofbiz.sh
+# ./startofbiz.sh
 
 
 

@@ -1,0 +1,44 @@
+Buildfile: build.xml
+
+Main targets:
+
+ build-website            For committers : Update dtds and JavaDoc from OFBiz intance to site
+ clean-all                Clean all DB, Catalina and caches data, logs, and runtime subdirectories and all specific files like .rej, .orig
+ clean-cache              Clean the UtilCache file if errors found with old objects in the cache (Java runtime error something like 'local class incompatible')
+ clean-catalina           Clean Catalina data in runtime/catalina/work
+ clean-data               Clean all DB data (Derby and HSQL) under runtime/data
+ clean-indexes            Remove indexes for full text search
+ clean-logs               Clean all logs in runtime/logs
+ clean-output             Clean runtime/output directory
+ clean-tempfiles          Remove files located in runtime/tempfiles (captcha, etc...)
+ clean-xtra               Clean all other files like .rej, .orig, etc.
+ copy-dtds                For committers : Copy all dtds from OFBiz instance to website
+ create-admin-user-login  Prompts for a user name, then creates a user login with admin privileges and a temporary password equal to 'ofbiz'. After a succesful login the user will be prompted for a new password.
+ create-component         Creates the layout of an OFBiz component in the hot-deploy folder.
+ deploy-config            Deploys a set of file from a directory into the instance. Mainly used to manage multiple sets of configuration files. eg: ant deploy-config -Dfrom=<directory> [-Ddeployconf.substitution.file=path/to/something.properties]
+ docs-all                 For committers : Build all javadoc into one tree for easier viewing by the community
+ docs-applications        Build ofbiz applications javadoc into two trees for easier viewing by the community
+ docs-framework           Build ofbiz framework javadoc into two trees for easier viewing by the community
+ docs-hotdeploy           Build hot-deploy components javadoc into a separate for easier viewing by the community
+ docs-opentaps            Build opentaps javadoc into two trees for easier viewing by the community
+ download-PG-JDBC         Download the PostgreSQL JDBC driver file
+ download-selenium        Download the selenium files
+ load-admin-user-login    Creates a user login with admin privileges and a temporary password equal to 'ofbiz'; after a succesful login the user will be prompted for a new password. Example command for the userLogin 'admin': ./ant load-admin-user-login -DuserLoginId=admin
+ refresh                  Clean all and rebuild
+ run                      This will start OFBiz
+ run-debug                Starts OFBiz in debugging mode
+ run-install              This loads all configured data; meant for generic OFBiz development, testing, demonstration, etc purposes
+ run-install-extseed      This loads seed, seed-initial and ext data; meant for manual/generic testing, development, or going into production with a derived system based on stock OFBiz where the ext data basically replaces the demo data
+ run-install-exttest      This loads seed, seed-initial, ext and ext-test data; meant for automated testing with a derived system based on stock OFBiz
+ run-install-file         This loads data using the command line argument 'file' to load data from a given file
+ run-install-multitenant  This loads all data needed for the multi-tenancy demonstration. Caution: this creates three databases, with each one loaded with all demo data.
+ run-install-noext        This loads all configured data but does not load the ext files in opentaps/mycompany 
+ run-install-readers      This loads data using the command line argument 'data-readers' that takes a comma separated list of readers (seed, seed-initial, demo, ext, ext-test, ext-demo)
+ run-install-seed         This loads ONLY the seed data (not seed-initial, demo, ext* or anything else); meant for use after an update of the code to reload the seed data as it is generally maintained along with the code and needs to be in sync for operation
+ run-pos                  Start the POS (Point of sale) system
+ run-single-test          Run a single test, eg: ant run-single-test -Dtest.component=opentaps-tests -Dtest.case=financials-tests
+ run-single-test-suite    Run a single test suite, eg: ant run-single-test-suite -Dtest.component=accounting -Dtest.suiteName=accountingtests
+ run-test-list            Run all configured tests, stopping/starting ofbiz between each test
+ run-tests                Run OFBiz default tests, execute ant run-install before and see results in runtime/logs/test-results/html/all-tests.html
+ svninfo                  Update the Release-revision info in the footer. Note that you need a valid Internet connection and Subversion connected to the OFBiz repository for that 
+Default target: build
